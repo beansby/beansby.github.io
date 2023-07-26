@@ -1,0 +1,540 @@
+/* concept color */
+:root {
+	--maingreen : #05EE70;
+	--subgreen : #1C8B4F;
+	--bggrey : #f7f7f7;
+}
+
+a {
+  text-decoration: none; 
+  color: unset;
+}
+
+/* font */
+@font-face {
+	font-family: 'Padyakke';
+	src: url('./font/PadyakkeExpandedOne-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'RubikBold';
+	src: url('./font/RubikMonoOne-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'KimmBold';
+	src: url('./font/한국기계연구원_bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'KimmLight';
+	src: url('./font/한국기계연구원_Light.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'NYJGothic';
+	font-weight: 300;
+	font-style: normal;
+	src: url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicLight.eot');
+	src: url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicLight.eot?#iefix') format('embedded-opentype'),
+			 url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicLight.woff2') format('woff2'),
+			 url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicLight.woff') format('woff'),
+			 url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicLight.ttf') format("truetype");
+	font-display: swap;
+} 
+@font-face {
+	font-family: 'NYJGothic';
+	font-weight: 500;
+	font-style: normal;
+	src: url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicMedium.eot');
+	src: url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicMedium.eot?#iefix') format('embedded-opentype'),
+			 url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicMedium.woff2') format('woff2'),
+			 url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicMedium.woff') format('woff'),
+			 url('https://cdn.jsdelivr.net/gh/webfontworld/nyj/NYJGothicMedium.ttf') format("truetype");
+	font-display: swap;
+} 
+
+/* animation */
+@keyframes flowToLeft {
+	0% {
+		transform: translateX(0);
+	}
+	50%{
+		transform: translateX(-110%);
+	}
+	50.01%{
+		transform: translateX(110%);
+	}
+	100%{
+		transform: translateX(0);
+	}
+}
+
+@keyframes flowToLeftClone {
+	0% {
+		transform: translateX(0);
+	}
+
+	100%{
+		transform: translateX(-210%);
+	}
+}
+
+@keyframes shaking {
+	0% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(10px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/* 헤더 */
+header {
+	position: fixed;
+	top: 50px;
+	width: 100%;
+}
+
+#header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 60px;
+}
+
+#header #logo {
+	font-size: 24px;
+	font-weight: 800;
+	font-family: 'KimmBold', sans-serif;
+}
+
+/* ************* 페이지 버튼 ************* */
+#move-page {
+	position:fixed;
+	bottom: 55px; right: 55px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	z-index: 50;
+	font-family: 'KimmBold', sans-serif;
+	font-size: 12px;
+}
+
+#prev-page, #next-page {
+	cursor: pointer;
+	z-index: 50;
+}
+
+#prev-page img, #next-page img {
+	width: 15px;
+}
+
+/* ************* main page ************* */
+#section1 {
+	background-color: var(--maingreen);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'RubikBold', sans-serif;
+	color: #000;
+}
+
+#section1 #keyword {
+
+}
+
+
+
+/* ************* index - project list ************* */
+#section2 {
+	background-color: #000;
+	width: 100%;
+	height: 100vh;
+	/* padding : 50px; */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+#index {
+	position: absolute;
+	width: 100%;
+	height: 20%;
+	top: -15px;
+	color: var(--maingreen);
+	font-size: 25vh;
+	font-family: 'Padyakke', sans-serif;
+}
+
+#section2  #project-list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	width: 70%;
+}
+
+#section2  #project-list .project-button {
+	box-sizing: border-box;
+	height:15vh;
+	color: var(--maingreen);
+	font-family: 'RubikBold', sans-serif;
+	font-size: 3.5vh;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	padding: 8%;
+	justify-content: center;
+}
+
+#section2  #project-list .project-button span {
+	color: var(--subgreen);
+	font-size: 0.5em;
+	font-family: 'KimmLight', sans-serif;
+}
+
+#section2  #project-list .project-button:hover {
+	background-color: var(--maingreen);
+	color: #000;
+	transition: all ease-in-out 0.2s;
+}
+
+
+
+/********* project - coco *********/
+#coco {
+	background-color: var(--bggrey);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+
+/* 전광판 애니메이션 */
+.project-title {
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+	white-space: nowrap;
+	font-family: 'Padyakke', sans-serif;
+	font-size: 20vw;
+	display: flex;
+	gap: 60px
+}
+
+.roller {
+	display: inline-block;
+	animation: marquee 10s linear infinite;
+}
+
+.roller.reverse {
+	display: inline-block;
+	animation: marquee 8s linear reverse infinite;
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+	
+}
+
+/* .project-title {
+	position: absolute;
+	top: 0;
+	font-family: 'Padyakke', sans-serif;
+	font-size: 20vw;
+	display: flex;
+	gap: 20px;
+	flex-direction: column;
+	white-space: nowrap;
+}
+
+.project-title .roller {
+	position: absolute;
+	height: 100%;
+}
+
+.project-title .roller > ul{
+	margin: 0;
+	list-style: none;
+	padding: 9px 0;
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.project-title .roller > ul > li{
+	padding-right: 30px;
+}
+
+.project-title .roller.original {
+	animation: 12s linear infinite normal forwards running flowToLeft;
+}
+
+.project-title .roller.clone {
+	animation: 12s linear infinite normal none running flowToLeftClone;
+} */
+
+/* 프로젝트 내용 */
+#coco .project-wrapper, #korea .project-wrapper, #jeju .project-wrapper {
+	/* background-color: #1C8B4F; */
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	width: 70vw;
+	z-index: 5;
+	position: relative;
+}
+
+.project-wrapper .image-wrapper {
+	box-sizing: border-box;
+	width: 70vw;
+	height: 40vw;
+	background-color: black;
+	/* overflow: hidden; */
+}
+.project-wrapper .image-wrapper .slick-carousel {
+	/* display: flex; */
+	height: 42vw;
+}
+
+.image-wrapper .slick-carousel .image {
+	width: 70vw;
+	height: 40vw;
+	object-fit: cover;
+}
+
+.image-wrapper .slick-carousel video {
+	width: 70vw;
+	height: 40vw;
+	object-fit: cover;
+}
+
+/* carousel 스타일 */
+.slick-carousel {
+	position: relative;
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 10px;
+	list-style: none;
+	z-index: 21;
+}
+
+.slick-dots li button {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #bbb;
+	border: none;
+	padding: 0;
+	opacity: 1;
+}
+
+.slick-dots li.slick-active button {
+	background-color: #333;
+}
+
+/* 화살표 이미지 위에 위치시키기 위한 스타일 */
+.slick-prev, .slick-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 30;
+	cursor: pointer;
+	font-size: 24px;
+	background-color: transparent;
+	border: none;
+	width: 30px;
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.slick-prev:hover, .slick-next:hover {
+	background-color: #00000017;
+}
+
+.slick-carousel .slick-prev img, .slick-carousel .slick-next img {
+	width: 15px;
+}
+
+.slick-prev {
+	left: 0;
+}
+
+.slick-next {
+	right: 0;
+}
+
+/* 설명 보기 버튼 */
+.description-wrapper {
+	font-family: 'RubikBold', sans-serif;
+}
+
+.description-wrapper .description-button {
+	font-family: 'RubikBold', sans-serif;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	position: relative;
+}
+
+.description-wrapper .description-button::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom : -5px; left: -2px;
+	background: #000;
+	transition: transform .2s ease-in-out;
+	transform: scale(0);
+}
+
+.description-wrapper .description-button:hover::after {
+	transform: scale(1);
+}
+
+/* 설명 내용 */
+.project-wrapper .description-detail {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	box-sizing: border-box;
+	width: 100%; 	height: 42vw;
+	padding: 8%;
+	z-index: 20;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.project-wrapper .description-detail .description-text {
+	display: flex;
+	gap: 10px;
+	font-family: 'RubikBold', sans-serif;
+	font-size: 1.5vw;
+}
+.project-wrapper .description-detail .description-text h5 {
+	width: 20%;
+}
+
+.project-wrapper .description-detail .description-text span {
+	font-family: 'NYJGothic', sans-serif;
+	font-weight: 300;
+}
+
+/* 프로젝트별 페이지 버튼 */
+.description-detail .project-document {
+	display: flex;
+	gap: 50px;
+	justify-content: center;
+}
+
+.description-detail .project-document a {
+	background-color: var(--maingreen);
+	color: #000;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 25%;
+	height: 100%;
+	padding: 5px;
+	font-family: 'RubikBold', sans-serif;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.description-detail .project-document a:hover {
+	background-color: var(--subgreen);
+	color: #fff;
+}
+
+
+/********* project - korea *********/
+#korea, #jeju{
+	background-color: var(--bggrey);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+	border-top: 1px solid black;
+}
+
+
+/********* personal page *********/
+#section6 {
+	background-color: var(--maingreen);
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#site-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 5rem;
+	width: 80%;
+}
+
+#site-wrapper .site-button {
+	box-sizing: border-box;
+	display: flex;
+	gap: 20px;
+	height: 15vh;
+	align-items: center;
+	padding: 20px;
+	/* background-color: white; */
+	font-family: 'Padyakke', sans-serif;
+	font-size: 13vw;
+	cursor: pointer;
+}
+
+.site-button .double-arrow-icon {
+	width: 50px;
+}
+
+.double-arrow-icon#move {
+	animation: shaking .6s infinite ease-in-out;
+}
+
+.site-button.left {
+	justify-content: flex-start;
+}
+
+.site-button.right {
+	justify-content: flex-end;
+}
