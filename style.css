@@ -21,11 +21,11 @@ a {
 }
 @font-face {
 	font-family: 'KimmBold';
-	src: url('./font/한국기계연구원_bold.ttf') format('truetype');
+	src: url('./font/kimm-bold.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'KimmLight';
-	src: url('./font/한국기계연구원_Light.ttf') format('truetype');
+	src: url('./font/kimm-Light.ttf') format('truetype');
 }
 @font-face {
 	font-family: 'NYJGothic';
