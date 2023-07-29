@@ -23,10 +23,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			event.preventDefault();
 			const href = button.getAttribute('href');
 			const targetSection = document.querySelector(href);
+			console.log(targetSection);
 			if (targetSection) {
 				currentSectionIndex = Array.from(sections).indexOf(targetSection);
-				// targetSection.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the clicked section
+				console.log(">>>>>>>> projectButton");
 				updateCurrentSection();
+				targetSection.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the clicked section
 			}
 		});
 	});
@@ -36,6 +38,33 @@ window.addEventListener('DOMContentLoaded', ()=>{
 		sections.forEach((section, index) => {
 			if (index === currentSectionIndex) {
 				section.scrollIntoView({ behavior: 'smooth' });
+				console.log(">>> index:"+index);
+				console.log(">>> section:");
+				console.log(section);
+				if (index == 1) {
+					// 섹션 2일 때 버튼 스타일 변경
+					prevButton.innerHTML = '<img src="./img/arrow-top-white.svg" alt="">';
+					nextButton.innerHTML = '<img src="./img/arrow-bottom-white.svg" alt="">';
+					numberElement.style.color = '#fff';
+				} else {
+					// 다른 섹션일 때 버튼 스타일 원래대로
+					prevButton.innerHTML = '<img src="./img/arrow-top-black.svg" alt="">';
+					nextButton.innerHTML = '<img src="./img/arrow-bottom-black.svg" alt="">';
+					numberElement.style.color = '#000';
+				}
+			}
+		});
+
+		const currentSectionNumber = currentSectionIndex + 1;
+		numberElement.textContent = currentSectionNumber.toString().padStart(2, '0');
+	}
+	function updateCurrentSection2() {
+		sections.forEach((section, index) => {
+			if (index === currentSectionIndex) {
+				// section.scrollIntoView({ behavior: 'smooth' });
+				console.log(">>> index:"+index);
+				console.log(">>> section:");
+				console.log(section);
 				if (index == 1) {
 					// 섹션 2일 때 버튼 스타일 변경
 					prevButton.innerHTML = '<img src="./img/arrow-top-white.svg" alt="">';
@@ -64,14 +93,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 			if (entry.isIntersecting) {
 				const index = Array.from(sections).indexOf(entry.target);
 				const isInViewport = entry.intersectionRatio >= 0.5;
+				console.log(isInViewport)
 				if (isInViewport) {
 					currentSectionIndex = index;
-					updateCurrentSection();
+					console.log(">>>>>>>> observer");
+					updateCurrentSection2();
 				} else {
 					// 만약 교차 영역이 50% 미만으로 떨어지면 이전 섹션으로 돌아가기
 					if (index > 0) {
 						currentSectionIndex = index - 1;
-						updateCurrentSection();
+						updateCurrentSection2();
 					}
 				}
 			}
